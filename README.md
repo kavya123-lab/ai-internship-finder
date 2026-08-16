@@ -6,6 +6,22 @@ This isn't a chatbot that answers questions about internships — it's an agent 
 
 ---
 
+## Demo
+
+**🎥 Video walkthrough:** [Watch the demo](https://drive.google.com/file/d/1tAOObPEiEf9uxE51ihYrbGaAjCRnVVJT/view?usp=sharing)
+
+**Screenshots:**
+
+| Search | Results |
+|---|---|
+| ![Search form](docs/screenshots/search.png) | ![Results grid](docs/screenshots/results.png) |
+
+| Apply Modal | Success |
+|---|---|
+| ![Apply modal](docs/screenshots/apply.png) | ![Applied successfully](docs/screenshots/success.png) |
+
+---
+
 ## Table of Contents
 - [Why I built this](#why-i-built-this)
 - [How it works — the pipeline](#how-it-works--the-pipeline)

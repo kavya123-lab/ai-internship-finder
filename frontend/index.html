@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Internship Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">Internship<span class="brand-accent">Finder</span></span>
+      </div>
+      <p class="brand-tagline">Search once. Apply in one click.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="search-card">
+      <form id="search-form">
+        <div class="grid-4">
+          <div class="field">
+            <label for="role">Role</label>
+            <div class="autosuggest-wrap">
+              <input id="role" type="text" placeholder="e.g. AI/ML Intern, Data Scientist" autocomplete="off" required />
+              <div id="role-suggestions" class="suggestions hidden"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="location">Location</label>
+            <div class="autosuggest-wrap">
+              <input id="location" type="text" placeholder="e.g. Ahmedabad, Remote" autocomplete="off" />
+              <div id="location-suggestions" class="suggestions hidden"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="work_mode">Work Mode</label>
+            <select id="work_mode">
+              <option value="">Any</option>
+              <option value="Remote">Remote</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Onsite">Onsite</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="experience">Experience</label>
+            <select id="experience">
+              <option value="fresher">Fresher</option>
+              <option value="0-1 years">0–1 years</option>
+              <option value="1-2 years">1–2 years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="skills-input">Skills</label>
+            <div class="tag-input-wrap" id="skills-tag-wrap">
+              <div id="skills-chips" class="skills-chips"></div>
+              <input id="skills-input" type="text" placeholder="Type a skill and press Enter" autocomplete="off" />
+              <div id="skills-suggestions" class="suggestions hidden"></div>
+            </div>
+          </div>
+          <div class="field field-btn">
+            <button type="submit" class="btn-primary btn-search">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+              Search Internships
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <p class="filter-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      Showing only internships that are actively hiring and posted within the last 24 hours.
+    </p>
+
+    <section id="results-section" class="results-section hidden">
+      <div class="results-header">
+        <h2>Results</h2>
+        <p id="search-summary" class="summary-text"></p>
+      </div>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Searching LinkedIn, Internshala, Indeed &amp; Naukri...</p>
+      </div>
+
+      <div id="empty-state" class="empty-state hidden">
+        <p>No matching internships found. Try broadening your skills or location.</p>
+      </div>
+
+      <div id="results-grid" class="results-grid"></div>
+    </section>
+
+  </main>
+
+  <div id="apply-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-role-title">Apply</h3>
+        <button id="modal-close" class="modal-close" type="button" aria-label="Close">&times;</button>
+      </div>
+
+      <form id="apply-form">
+        <div class="grid-2">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">Your Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required />
+          </div>
+          <div class="field">
+            <label for="linkedin_url">LinkedIn URL</label>
+            <input id="linkedin_url" name="linkedin_url" type="url" required />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label for="portfolio_url">Portfolio URL (optional)</label>
+            <input id="portfolio_url" name="portfolio_url" type="url" />
+          </div>
+          <div class="field">
+            <label for="recruiter_email">Recruiter / Company Email</label>
+            <input id="recruiter_email" name="recruiter_email" type="email" required placeholder="Auto-filling..." />
+            <span id="recruiter-email-status" class="hint"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="resume">Resume</label>
+          <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" required />
+          <span class="hint">PDF or Word document</span>
+        </div>
+
+        <div id="apply-status"></div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary">Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

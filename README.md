@@ -8,7 +8,7 @@ This isn't a chatbot that answers questions about internships — it's an agent 
 
 ## Demo
 
-**🎥 Video walkthrough:** [Watch the demo](https://drive.google.com/file/d/1tAOObPEiEf9uxE51ihYrbGaAjCRnVVJT/view?usp=sharing)
+**🎥 Video walkthrough:** [Watch the demo](https://drive.google.com/file/d/1DMBjHZuqUu4xkdTfCnToObA9op4Qp7TH/view?usp=sharing)
 
 **Screenshots:**
 
